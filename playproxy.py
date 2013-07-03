@@ -35,6 +35,7 @@ def searchPlay(search):
         "User-Agent": random.choice(UASTRS)
     }
     response = requests.get(PLAY, headers=headers, params={'c':'apps', 'q':search}, cookies={})
+    return response.text
     if response.status_code != 200:
         log.warn('google play app search failed %s', search)
         return
@@ -44,7 +45,6 @@ def searchPlay(search):
     for result in results:
         package_name = result.get('data-docid')
         if package_name is None:
-            return response.text
             log.warn('package_name not found skipping app')
             continue
         icon_url = result.find('a', {'class':'thumbnail'}).img['src']
