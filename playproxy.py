@@ -1,7 +1,8 @@
-import eventlet
-requests = eventlet.import_patched('requests')
+from gevent import monkey; monkey.patch_all()
 from bs4 import BeautifulSoup
-from bottle import route, run, template, EventletServer, request
+import bottle
+import requests
+from bottle import route, run, template, request
 
 PLAY = 'http://play.google.com/store/search'
 
@@ -39,5 +40,4 @@ def query():
     return searchPlay(search)
 
 
-def main():
-    run(host='0.0.0.0', port=6548, server=EventletServer)
+app = bottle.default_app()
