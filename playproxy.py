@@ -31,7 +31,10 @@ def searchPlay(search):
     if not search:
         return dict(total=len(data), data=data)
     headers = {
-        "User-Agent": random.choice(UASTRS)
+        "User-Agent": random.choice(UASTRS),
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT"
     }
     response = requests.get(PLAY, headers=headers, params={'c':'apps', 'q':search}, cookies={})
     if response.status_code != 200:
