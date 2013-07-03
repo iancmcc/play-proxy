@@ -11,7 +11,7 @@ def searchPlay(search):
     data = []
     if not search:
         return dict(total=len(data), data=data)
-    response = requests.get(PLAY, params={'c':'apps', 'q':search})
+    response = requests.get(PLAY, params={'c':'apps', 'q':search}, cookies={})
     if response.status_code != 200:
         log.warn('google play app search failed %s', search)
         return
