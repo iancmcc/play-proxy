@@ -31,11 +31,9 @@ def searchPlay(search):
     if not search:
         return dict(total=len(data), data=data)
     headers = {
-        "HOST": RAND.next(),
         "User-Agent": random.choice(UASTRS)
     }
     response = requests.get(PLAY, headers=headers, params={'c':'apps', 'q':search}, cookies={})
-    return response.text
     if response.status_code != 200:
         log.warn('google play app search failed %s', search)
         return
