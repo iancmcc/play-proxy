@@ -44,6 +44,7 @@ def searchPlay(search):
     for result in results:
         package_name = result.get('data-docid')
         if package_name is None:
+            return response.text
             log.warn('package_name not found skipping app')
             continue
         icon_url = result.find('a', {'class':'thumbnail'}).img['src']
