@@ -1,9 +1,12 @@
+import logging
 from gevent import monkey; monkey.patch_all()
 from bs4 import BeautifulSoup
 import bottle
 import random
 import requests
 from bottle import route, run, template, request
+
+log = logging.getLogger(__name__)
 
 PLAY = 'http://play.google.com/store/search'
 
