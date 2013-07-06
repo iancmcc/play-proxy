@@ -41,6 +41,8 @@ def searchPlay(search):
         'c':'apps', 
         'q':search, 
         'noredirect': '1',
+    }, cookies={
+        "NID": "67=FMCNrMYZKxbTw88omK_g0i6FoBZRwow4S8i7CFppZBYoZ26e7VFFDB3JL-8XePS-8cFIeTvFvjw5isKfX63ah1cIzFEozuxL9tlV0Q82_qTN7NKw1tgsYfuVY2t1ZnpI"
     })
     log.info(repr(response.cookies))
     if response.status_code != 200:
