@@ -37,7 +37,7 @@ def searchPlay(search):
         "Pragma": "no-cache",
         "Expires": "Thu, 01 Jan 1970 00:00:00 GMT"
     }
-    response = requests.get(PLAY, headers=headers, params={'c':'apps', 'q':search, '_dt':str(time.time())}, cookies={})
+    response = requests.get(PLAY, headers=headers, params={'c':'apps', 'q':search, '_dx':str(time.time())}, cookies={})
     if response.status_code != 200:
         log.warn('google play app search failed %s', search)
         return
