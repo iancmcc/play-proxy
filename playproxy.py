@@ -8,6 +8,7 @@ import requests
 from bottle import route, run, template, request
 
 log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
 
 PLAY = 'http://play.google.com/store/search'
 
