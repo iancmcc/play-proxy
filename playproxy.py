@@ -9,7 +9,7 @@ from bottle import route, run, template, request
 log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
-PLAY = 'http://play.google.com/store/search'
+PLAY = 'https://play.google.com/store/search'
 
 UASTRS = [
     "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; McAfee; OfficeLiveConnector.1.5; OfficeLivePatch.1.3)",
